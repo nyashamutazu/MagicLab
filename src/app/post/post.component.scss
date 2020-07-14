@@ -1,0 +1,16 @@
+.mat-card {
+    margin: none;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.mat-card-header {
+    margin-right: 10px;
+}
+
+.mat-card-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}

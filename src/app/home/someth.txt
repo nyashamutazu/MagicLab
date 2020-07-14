@@ -1,0 +1,30 @@
+/api?count=X
+Returns the latest X tweets
+
+
+/api?count=X&afterId=ID
+Returns X tweets created after the id ID
+
+
+/api?count=X&beforeId=ID
+Returns X tweets created before the id ID
+
+
+/api?count=X&id=ID&direction=(-1 OR 1)
+Returns X tweets with the ID and the direction in time (-1 for past, 1 for future)
+
+
+/api?count=X&afterTime=TS
+Returns X tweets created after the timestamp TS
+
+
+/api?count=X&beforeTime=TS
+Returns X tweets created before the timestamp TS
+
+
+/api?count=X&time=TS&direction=(-1 OR 1)
+Returns X tweets with timestamp TS  and the direction in time (-1 for past, 1 for future)
+
+
+/reset
+This resets the database back to 100 entries. You can use it for your testing purposes.

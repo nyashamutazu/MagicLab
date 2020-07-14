@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="sidebar">
+        <div class="example-container">
+            <form [formGroup]="options" (submit)="search()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Order</mat-label>
+                    <mat-select formControlName="order">
+                        <mat-option value="desc">Descending Order</mat-option>
+                        <mat-option value="asc">Ascending Order</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <div class="mat-radio-group">
+                    <mat-label>Direction </mat-label>
+                    <mat-radio-group formControlName="direction">
+                        <mat-radio-button value="-1">Before</mat-radio-button>
+                        <mat-radio-button value="1">After</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Search By Time Stamp</mat-label>
+                    <input matInput formControlName="timeStamp" type="number">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Search By Id</mat-label>
+                    <input matInput formControlName="id" type="number">
+                </mat-form-field>
+                <div>
+                    <button mat-raised-button color="primary">Search</button>
+                </div>
+                <div *ngIf="errors">
+                    <p class="error" *ngFor="let error of errors">{{ error }} </p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="main-content">
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+        <div *ngIf="!isLoading">
+            <app-post [post]="post" *ngFor="let post of posts"></app-post>
+        </div>
+        <div *ngIf="errorDialog">
+            <app-error (close)="closeDialog()"></app-error>
+        </div>
+
+    </div>
+</div>
+<div class="footer">
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 50]" (page)="onChangedPage($event)">
+    </mat-paginator>
+</div>

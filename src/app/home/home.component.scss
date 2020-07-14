@@ -1,0 +1,40 @@
+.container {
+  max-width: 1080px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sidebar {
+  flex: 0 0 200px;
+  margin-right: 20px;
+  background: grey;
+  padding: 10px;
+  display: flex;
+}
+
+.mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8px;
+}
+
+mat-radio-button {
+  margin-bottom: 8px;
+}
+
+mat-form-field,
+mat-select,
+mat-option {
+  width: 100%;
+}
+
+.main-content {
+  flex: 1;
+  mat-spinner, app-error {
+    margin: auto;
+  }
+}
